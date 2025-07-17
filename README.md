@@ -18,14 +18,14 @@ s3-lambda-glue-etl/
 ├── incoming/ 
 │   └── sample.csv               # Sample raw CSV for testing 
 ├── README.md                    # Project documentation 
-└── architecture.png             # Diagram of the pipeline 
+└── architecture.jpeg            # Diagram of the pipeline 
 
 ```
 
 ---
 
 ## 🧪 AWS Services Used
-- **AWS S3** – Storage for raw and processed data 
+- **Amazon S3** – Storage for raw and processed data 
 - **AWS Lambda (Python 3.12)** - Trigger on CSV upload, invoke Glue job
 - **AWS Glue (PySpark)** - ETL transformation script
 - **AWS CloudWatch** - Logging and monitoring 
@@ -42,7 +42,7 @@ Created a bucket `data-ingestion-ayshan ` with folders `incoming/` and `processe
 
 
 ### 2. Created AWS Lambda Function
-Set up a Lambda function `processCSVFile` triggered by S3 file uploads to the `incoming/` folder. The function parses the uploaded CSV file.
+Set up a Lambda function triggered by S3 file uploads to the `incoming/` folder. The function parses the uploaded CSV file.
 
 ### 3. Configured Permissions
 Attached the required IAM policies to allow the Lambda function to access S3 and write to CloudWatch Logs.
@@ -69,3 +69,6 @@ The Glue job writes cleaned/transformed data to the `processed/` folder without 
 
 
 ## 📷 Architecture Diagram
+
+![Architecture Diagram](architecture.jpeg)
+
