@@ -15,7 +15,7 @@ This project demonstrates a serverless data pipeline on AWS where:
 s3-lambda-glue-etl/ 
 ├── lambda_function.py           # Lambda function code 
 ├── glue_job_script.py           # AWS Glue ETL script 
-├── input_data/ 
+├── incoming/ 
 │   └── sample.csv               # Sample raw CSV for testing 
 ├── README.md                    # Project documentation 
 └── architecture.png             # Diagram of the pipeline 
@@ -38,25 +38,22 @@ s3-lambda-glue-etl/
 ### 1. Created an S3 Bucket
 Created a bucket with folders `incoming/` and `processed/` to simulate raw and processed data zones.
 
-### 2. Uploaded Sample CSV
-Uploaded a sample CSV file to the `incoming/` folder of the S3 bucket.
-
-### 3. Created AWS Lambda Function
+### 2. Created AWS Lambda Function
 Set up a Lambda function triggered by S3 file uploads to the `incoming/` folder. The function parses the uploaded CSV file.
 
-### 4. Configured Permissions
+### 3. Configured Permissions
 Attached the required IAM policies to allow the Lambda function to access S3 and write to CloudWatch Logs.
 
-### 5. Verified Lambda Logs
+### 4. Verified Lambda Logs
 Checked CloudWatch Logs to ensure the Lambda function correctly processed the file.
 
-### 6. Created AWS Glue Job
+### 5. Created AWS Glue Job
 Built a Glue job to read, transform, and write data using PySpark. Output is written to the `processed/` folder.
 
-### 7. Triggered Glue from Lambda
+### 6. Triggered Glue from Lambda
 Modified the Lambda function to start the Glue job after successful file parsing.
 
-### 8. Wrote Transformed Data to S3
+### 7. Wrote Transformed Data to S3
 The Glue job writes cleaned/transformed data to the `processed/` folder without removing the original file from the `incoming/` folder.
 
 ## 📷 Architecture Diagram
