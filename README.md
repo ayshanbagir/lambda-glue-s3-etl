@@ -36,16 +36,25 @@ s3-lambda-glue-etl/
 ## ✅ Summary of Steps
 
 ### 1. Created an S3 Bucket
-Created a bucket with folders `incoming/` and `processed/` to simulate raw and processed data zones.
+Created a bucket `data-ingestion-ayshan ` with folders `incoming/` and `processed/` to simulate raw and processed data zones.
+
+<img width="1482" height="363" alt="image" src="https://github.com/user-attachments/assets/70fd7c8f-7a18-424d-a715-5cdcc42c6eb4" />
+
 
 ### 2. Created AWS Lambda Function
-Set up a Lambda function triggered by S3 file uploads to the `incoming/` folder. The function parses the uploaded CSV file.
+Set up a Lambda function `processCSVFile` triggered by S3 file uploads to the `incoming/` folder. The function parses the uploaded CSV file.
 
 ### 3. Configured Permissions
 Attached the required IAM policies to allow the Lambda function to access S3 and write to CloudWatch Logs.
 
+<img width="1198" height="322" alt="image" src="https://github.com/user-attachments/assets/59d3c306-6897-469a-a976-2b7cfc9f2084" />
+
+
 ### 4. Verified Lambda Logs
 Checked CloudWatch Logs to ensure the Lambda function correctly processed the file.
+
+<img width="1204" height="171" alt="image" src="https://github.com/user-attachments/assets/fa93b40d-1216-4cde-91ea-e157342c2e10" />
+
 
 ### 5. Created AWS Glue Job
 Built a Glue job to read, transform, and write data using PySpark. Output is written to the `processed/` folder.
@@ -55,5 +64,8 @@ Modified the Lambda function to start the Glue job after successful file parsing
 
 ### 7. Wrote Transformed Data to S3
 The Glue job writes cleaned/transformed data to the `processed/` folder without removing the original file from the `incoming/` folder.
+
+<img width="1492" height="405" alt="image" src="https://github.com/user-attachments/assets/d8b02de6-26a4-41c2-859f-22afbcbcdc29" />
+
 
 ## 📷 Architecture Diagram
