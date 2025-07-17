@@ -1,4 +1,4 @@
-# AWS Data Engineering Pipeline: Lambda + Glue + S3
+# AWS Data Pipeline: Lambda + Glue + S3
 
 This project demonstrates a serverless data pipeline on AWS where: 
 
