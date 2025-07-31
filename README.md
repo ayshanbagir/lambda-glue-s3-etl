@@ -36,7 +36,7 @@ s3-lambda-glue-etl/
 ## ✅ Summary of Steps
 
 ### 1. Created an S3 Bucket
-Created a bucket `data-ingestion-ayshan ` with folders `incoming/` and `processed/` to simulate raw and processed data zones.
+Created a bucket `data-ingestion-ayshan` with folders `incoming/` and `processed/` to simulate raw and processed data zones.
 
 <img width="1482" height="363" alt="image" src="https://github.com/user-attachments/assets/70fd7c8f-7a18-424d-a715-5cdcc42c6eb4" />
 
